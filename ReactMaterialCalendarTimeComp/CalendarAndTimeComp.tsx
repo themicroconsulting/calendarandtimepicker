@@ -65,17 +65,26 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
     }
 
 
+    componentWillReceiveProps = (nextProps: any) => {
+        const { primaryColorCode, secondaryColorCode } = this.props
+         if (nextProps.primaryColorCode !== primaryColorCode) {
+           this.setState({ primaryColorCode })
+         }
+         if (nextProps.secondaryColorCode !== secondaryColorCode) {
+           this.setState({ secondaryColorCode })
+         }
+    }
 
     public render(): JSX.Element {
     const defaultMaterialTheme = createTheme({
         palette: {
             primary: {
-                main: '#4287f5',
-                //main: this.props.primaryColorCode,
+                //main: '#4287f5',
+                main: this.state.primaryColorCode,
                 },
                 secondary: {
                 light: '#0066ff',
-                main: this.props.secondaryColorCode,
+                main: this.state.secondaryColorCode,
                 // dark: will be calculated from palette.secondary.main,
                 contrastText: '#ffcc00',
                 }
