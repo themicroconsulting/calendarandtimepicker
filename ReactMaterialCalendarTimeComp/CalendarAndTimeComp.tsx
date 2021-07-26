@@ -60,7 +60,7 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
         //convert date to ISO format
         var date = new Date(newValue);
         var isoDate = date.toISOString();
-        this.setState({selectedDate: newValue});
+        this.setState({selectedDate: isoDate});
         this.props.updateResponse(isoDate);
     }
 
@@ -90,7 +90,7 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
                             variant="inline"
                             label={this.props.dateTimePickerLabel}
                             inputVariant="outlined"
-                            value={this.props.selectedDate}
+                            value={this.state.selectedDate}
                             onChange={this.handleDateChange}
                             fullWidth
                         />

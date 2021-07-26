@@ -34,7 +34,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 
 	//React call back function
 	private updateResponse(newValue: string) {
-		console.log("New response from index file**");
+		console.log("New response from index file**", newValue);
 		this._value = newValue;
 		this._notifyOutputChanged();
 	}
