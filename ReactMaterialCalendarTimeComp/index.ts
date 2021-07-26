@@ -95,7 +95,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 	{
 		return {
 			dateProperty: new Date(this._value),
-			PrimaryColor: this._primaryColor
+			//PrimaryColor: this._primaryColor
 		};
 	}
 
