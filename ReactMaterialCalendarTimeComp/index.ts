@@ -21,6 +21,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 		primaryColorCode: "",
 		secondaryColorCode: "",
 		dateTimePickerLabel: "",
+		selectedDate: new Date(),
 		updateResponse: this.updateResponse.bind(this),
 	}
 	/**
@@ -77,6 +78,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 		this.props.primaryColorCode = context.parameters.PrimaryColor.raw as string;
 		this.props.secondaryColorCode = context.parameters.SecondaryColor.raw as string;
 		this.props.dateTimePickerLabel = context.parameters.Label.raw as string;
+		this.props.selectedDate = context.parameters.dateProperty.raw as Date;
 		// Add code to update control view
 		ReactDOM.render(
 			React.createElement(

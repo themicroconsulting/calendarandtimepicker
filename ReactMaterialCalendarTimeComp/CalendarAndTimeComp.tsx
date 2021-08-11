@@ -16,7 +16,7 @@ import {
 
 export interface ICalendarAndTimeProps {
 	selectedTime?: Date;
-    selectedDate?: string;
+    selectedDate?: Date;
     personaSize?: number;
     primaryColorCode: string;
     secondaryColorCode: string;
@@ -60,7 +60,8 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
         //convert date to ISO format
         var date = new Date(newValue);
         var isoDate = date.toISOString();
-        this.setState({selectedDate: isoDate});
+        this.setState({selectedDate: newValue})
+        //this.setState({selectedDate: isoDate});
         this.props.updateResponse(isoDate);
     }
 
@@ -90,7 +91,7 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
                             variant="inline"
                             label={this.props.dateTimePickerLabel}
                             inputVariant="outlined"
-                            value={this.state.selectedDate}
+                            value={this.props.selectedDate}
                             onChange={this.handleDateChange}
                             fullWidth
                         />
