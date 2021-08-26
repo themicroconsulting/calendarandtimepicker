@@ -21,6 +21,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 		primaryColorCode: "",
 		secondaryColorCode: "",
 		dateTimePickerLabel: "",
+		minuteStepper: 0,
 		selectedDate: new Date(),
 		updateResponse: this.updateResponse.bind(this),
 	}
@@ -60,6 +61,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 		// Add control initialization code
 		this._notifyOutputChanged = notifyOutputChanged;
 		//this.props.selectedTime = context.parameters.Label.raw as unknown as Date || 3;
+		this.props.minuteStepper = context.parameters.TimePickerMinuteStepper.raw as number;
 		this.props.primaryColorCode = context.parameters.PrimaryColor.raw as string;
 		this.props.secondaryColorCode = context.parameters.SecondaryColor.raw as string;
 		this.props.dateTimePickerLabel = context.parameters.Label.raw as string;
@@ -78,6 +80,7 @@ export class ReactMaterialCalendarTimeComp implements ComponentFramework.Standar
 		this.props.primaryColorCode = context.parameters.PrimaryColor.raw as string;
 		this.props.secondaryColorCode = context.parameters.SecondaryColor.raw as string;
 		this.props.dateTimePickerLabel = context.parameters.Label.raw as string;
+		this.props.minuteStepper = context.parameters.TimePickerMinuteStepper.raw as number;
 		this.props.selectedDate = context.parameters.dateProperty.raw as Date;
 		// Add code to update control view
 		ReactDOM.render(

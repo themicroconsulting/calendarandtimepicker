@@ -20,6 +20,7 @@
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="Label" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" default-value="Date And Time Picker"/>
     <property name="dateProperty" display-name-key="Property_Date_Display_Key" description-key="Property_Date_Desc_Key" of-type="DateAndTime.DateAndTime" usage="bound" />
+    <property name="TimePickerMinuteStepper" display-name-key="Time_icker_Minute_Stepper" description-key="Time_Picker_Stepper_Desck_Key" of-type="Whole.None" usage="bound" />
     <property name="PrimaryColor" display-name-key="Property_PR_Display_Key" description-key="Property_PR_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" default-value="#4287f5"/>
     <property name="SecondaryColor" display-name-key="Property_SR_Display_Key" description-key="Property_SR_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" default-value="#ffffff"/>
     <!-- 

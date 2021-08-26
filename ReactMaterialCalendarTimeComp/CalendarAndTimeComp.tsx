@@ -21,12 +21,14 @@ export interface ICalendarAndTimeProps {
     primaryColorCode: string;
     secondaryColorCode: string;
     dateTimePickerLabel: string;
+    minuteStepper: number;
 	updateResponse: (newValue: string) => void;
 }
 
 export interface ICalendarAndTimeState extends React.ComponentState, ICalendarAndTimeProps {
 	personaSize: number;
 	imagesFadeIn: boolean;
+    minuteStepper: number;
     primaryColorCode: string;
     secondaryColorCode: string;
     dateTimePickerLabel: string;
@@ -44,6 +46,7 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
 			//selectedTime: props.selectedTime || new Date(),
 			imagesFadeIn: true,
 			personaSize: 32,
+            minuteStepper: props.minuteStepper,
             primaryColorCode: props.primaryColorCode,
             secondaryColorCode: props.secondaryColorCode,
             dateTimePickerLabel: props.dateTimePickerLabel,
@@ -89,6 +92,7 @@ export class CalendarAndTimeComp extends React.Component<ICalendarAndTimeProps, 
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <DateTimePicker
                             variant="inline"
+                            minutesStep = {this.props.minuteStepper}
                             label={this.props.dateTimePickerLabel}
                             inputVariant="outlined"
                             value={this.props.selectedDate}
